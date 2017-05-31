@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="17.632556">
+<testcase classname="Franciscan Account" name="To verify define group nature page" time="17.632556">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter username "admin" and password "Admin#franciscan"............passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open define group nature page.....................................passed
+Then verify define group nature page........................................passed
+]]></system-out>
+</testcase>
+</testsuite>

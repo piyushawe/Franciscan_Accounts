@@ -1,0 +1,171 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 2706717210,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user enter \"http://qaerp.franciscanecare.net\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "http://qaerp.franciscanecare.net",
+                  "offset": 12
+                }
+              ],
+              "location": "MyStepDefs.user_enter(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 162019092,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user enter username \"admin\" and password \"Admin#franciscan\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "admin",
+                  "offset": 21
+                },
+                {
+                  "val": "Admin#franciscan",
+                  "offset": 42
+                }
+              ],
+              "location": "MyStepDefs.user_enter_username_and_password(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 60701,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "passes school name \"qaerp\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "qaerp",
+                  "offset": 20
+                }
+              ],
+              "location": "MyStepDefs.passes_school_name(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2491022725,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "click signin",
+            "match": {
+              "location": "MyStepDefs.click_signin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 346095176,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "account home page is opened",
+            "match": {
+              "location": "MyStepDefs.account_home_page_is_opened()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 126,
+            "value": "#define group nature"
+          }
+        ],
+        "before": [
+          {
+            "result": {
+              "duration": 4207727131,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyStepDefs.launchBrowser(Scenario)"
+            }
+          }
+        ],
+        "line": 128,
+        "name": "To verify define group nature page",
+        "description": "",
+        "id": "franciscan-account;to-verify-define-group-nature-page",
+        "after": [
+          {
+            "result": {
+              "duration": 4937576352,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyStepDefs.closeBrowser()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1532991942,
+              "status": "passed"
+            },
+            "line": 129,
+            "name": "user open define group nature page",
+            "match": {
+              "location": "MyStepDefs.user_open_define_group_nature_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1248345975,
+              "status": "passed"
+            },
+            "line": 130,
+            "name": "verify define group nature page",
+            "match": {
+              "location": "MyStepDefs.verify_define_group_nature_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 127,
+            "name": "@scenario20"
+          }
+        ]
+      }
+    ],
+    "name": "Franciscan Account",
+    "description": "    As a user I would like to verify that \r\n    The page is loaded successfully",
+    "id": "franciscan-account",
+    "keyword": "Feature",
+    "uri": "feature/VerifyPage.feature"
+  }
+]

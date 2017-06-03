@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 4207727131,
+  "duration": 5342499244,
   "status": "passed"
 });
 formatter.background({
@@ -19,17 +19,17 @@ formatter.background({
 });
 formatter.step({
   "line": 6,
-  "name": "user enter \"http://qaerp.franciscanecare.net\"",
+  "name": "user enter \"http://192.168.10.101:8069/Modules.aspx\"",
   "keyword": "Given "
 });
 formatter.step({
   "line": 7,
-  "name": "user enter username \"admin\" and password \"Admin#franciscan\"",
+  "name": "user enter username \"admin\" and password \"admin@123\"",
   "keyword": "When "
 });
 formatter.step({
   "line": 8,
-  "name": "passes school name \"qaerp\"",
+  "name": "passes school name \"rosary\"",
   "keyword": "And "
 });
 formatter.step({
@@ -45,14 +45,14 @@ formatter.step({
 formatter.match({
   "arguments": [
     {
-      "val": "http://qaerp.franciscanecare.net",
+      "val": "http://192.168.10.101:8069/Modules.aspx",
       "offset": 12
     }
   ],
   "location": "MyStepDefs.user_enter(String)"
 });
 formatter.result({
-  "duration": 2706717210,
+  "duration": 1517600178,
   "status": "passed"
 });
 formatter.match({
@@ -62,41 +62,41 @@ formatter.match({
       "offset": 21
     },
     {
-      "val": "Admin#franciscan",
+      "val": "admin@123",
       "offset": 42
     }
   ],
   "location": "MyStepDefs.user_enter_username_and_password(String,String)"
 });
 formatter.result({
-  "duration": 162019092,
+  "duration": 172833870,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "qaerp",
+      "val": "rosary",
       "offset": 20
     }
   ],
   "location": "MyStepDefs.passes_school_name(String)"
 });
 formatter.result({
-  "duration": 60701,
+  "duration": 90026,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStepDefs.click_signin()"
 });
 formatter.result({
-  "duration": 2491022725,
+  "duration": 1504344401,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStepDefs.account_home_page_is_opened()"
 });
 formatter.result({
-  "duration": 346095176,
+  "duration": 268373167,
   "status": "passed"
 });
 formatter.scenario({
@@ -133,18 +133,18 @@ formatter.match({
   "location": "MyStepDefs.user_open_define_group_nature_page()"
 });
 formatter.result({
-  "duration": 1532991942,
+  "duration": 1063172554,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStepDefs.verify_define_group_nature_page()"
 });
 formatter.result({
-  "duration": 1248345975,
+  "duration": 1267895181,
   "status": "passed"
 });
 formatter.after({
-  "duration": 4937576352,
+  "duration": 5387979541,
   "status": "passed"
 });
 });

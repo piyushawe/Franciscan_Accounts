@@ -1,13 +1,13 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("feature/VerifyPage.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Feature/VerifySaveView.feature");
 formatter.feature({
   "line": 1,
   "name": "Franciscan Account",
-  "description": "    As a user I would like to verify that \r\n    The page is loaded successfully",
+  "description": "As a user I would like to verify that\r\nThere are no errors on clicking save or view buttons of account",
   "id": "franciscan-account",
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 5342499244,
+  "duration": 5812652799,
   "status": "passed"
 });
 formatter.background({
@@ -19,17 +19,17 @@ formatter.background({
 });
 formatter.step({
   "line": 6,
-  "name": "user enter \"http://192.168.10.101:8069/Modules.aspx\"",
+  "name": "user enter \"http://qaerp.franciscanecare.net\"",
   "keyword": "Given "
 });
 formatter.step({
   "line": 7,
-  "name": "user enter username \"admin\" and password \"admin@123\"",
+  "name": "user enter username \"admin\" and password \"Admin#franciscan\"",
   "keyword": "When "
 });
 formatter.step({
   "line": 8,
-  "name": "passes school name \"rosary\"",
+  "name": "passes school name \"qaerp\"",
   "keyword": "And "
 });
 formatter.step({
@@ -45,14 +45,14 @@ formatter.step({
 formatter.match({
   "arguments": [
     {
-      "val": "http://192.168.10.101:8069/Modules.aspx",
+      "val": "http://qaerp.franciscanecare.net",
       "offset": 12
     }
   ],
   "location": "MyStepDefs.user_enter(String)"
 });
 formatter.result({
-  "duration": 1517600178,
+  "duration": 3544445086,
   "status": "passed"
 });
 formatter.match({
@@ -62,89 +62,83 @@ formatter.match({
       "offset": 21
     },
     {
-      "val": "admin@123",
+      "val": "Admin#franciscan",
       "offset": 42
     }
   ],
   "location": "MyStepDefs.user_enter_username_and_password(String,String)"
 });
 formatter.result({
-  "duration": 172833870,
+  "duration": 158868035,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "rosary",
+      "val": "qaerp",
       "offset": 20
     }
   ],
   "location": "MyStepDefs.passes_school_name(String)"
 });
 formatter.result({
-  "duration": 90026,
+  "duration": 61288,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStepDefs.click_signin()"
 });
 formatter.result({
-  "duration": 1504344401,
+  "duration": 9474422064,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStepDefs.account_home_page_is_opened()"
 });
 formatter.result({
-  "duration": 268373167,
+  "duration": 1202937621,
   "status": "passed"
 });
 formatter.scenario({
-  "comments": [
-    {
-      "line": 126,
-      "value": "#define group nature"
-    }
-  ],
-  "line": 128,
-  "name": "To verify define group nature page",
+  "line": 93,
+  "name": "To verify view button on define general ledger",
   "description": "",
-  "id": "franciscan-account;to-verify-define-group-nature-page",
+  "id": "franciscan-account;to-verify-view-button-on-define-general-ledger",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 127,
-      "name": "@scenario20"
+      "line": 92,
+      "name": "@scenario10"
     }
   ]
 });
 formatter.step({
-  "line": 129,
-  "name": "user open define group nature page",
+  "line": 94,
+  "name": "user open define general ledger page",
   "keyword": "When "
 });
 formatter.step({
-  "line": 130,
-  "name": "verify define group nature page",
+  "line": 95,
+  "name": "click view on define general ledger page",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "MyStepDefs.user_open_define_group_nature_page()"
+  "location": "MyStepDefs.user_open_define_general_ledger_page()"
 });
 formatter.result({
-  "duration": 1063172554,
+  "duration": 1906207635,
   "status": "passed"
 });
 formatter.match({
-  "location": "MyStepDefs.verify_define_group_nature_page()"
+  "location": "MyStepDefs.click_view_on_define_general_ledger_page()"
 });
 formatter.result({
-  "duration": 1267895181,
+  "duration": 2004896034,
   "status": "passed"
 });
 formatter.after({
-  "duration": 5387979541,
+  "duration": 5114992873,
   "status": "passed"
 });
 });

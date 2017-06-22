@@ -708,7 +708,31 @@ public class MyStepDefs {
 	  DefineNarrationMaster dnm= new DefineNarrationMaster(dr);
 	  dnm.verifyPage(schoolname, scenario);
   }
-  
+
+  @When("^select voucher type on define narration master page$")
+  public void select_voucher_type_on_define_narration_master_page() throws Throwable {
+	  DefineNarrationMaster dnm= new DefineNarrationMaster(dr);
+	  dnm.selectVoucherType();
+  }
+
+  @When("^enter narration as \"([^\"]*)\" on define narration master page$")
+  public void enter_narration_as_on_define_narration_master_page(String arg1) throws Throwable {
+	  DefineNarrationMaster dnm= new DefineNarrationMaster(dr);
+	  dnm.enterNarration(arg1);
+  }
+
+  @Then("^click save on define narration master page$")
+  public void click_save_on_define_narration_master_page() throws Throwable {
+	  DefineNarrationMaster dnm= new DefineNarrationMaster(dr);
+	  dnm.clickSave(schoolname, scenario);
+  }
+
+  @Then("^click view on define narration master page$")
+  public void click_view_on_define_narration_master_page() throws Throwable {
+	  DefineNarrationMaster dnm= new DefineNarrationMaster(dr);
+	  dnm.clickView(schoolname, scenario);
+  }
+
 //define account group
   @When("^user open define account group page$")
   public void user_open_define_account_group_page() throws Throwable {
@@ -721,7 +745,43 @@ public class MyStepDefs {
 	  DefineAccountGroup dag= new DefineAccountGroup(dr);
 	  dag.verifyPage(schoolname, scenario);
   }
-  
+
+  @When("^enter group name \"([^\"]*)\" on define account group page$")
+  public void enter_group_name_on_define_account_group_page(String arg1) throws Throwable {
+	  DefineAccountGroup dag= new DefineAccountGroup(dr);
+	  dag.enterGroupName(arg1);
+  }
+
+  @When("^select category on define account group page$")
+  public void select_category_on_define_account_group_page() throws Throwable {
+	  DefineAccountGroup dag= new DefineAccountGroup(dr);
+	  dag.selectCategory();
+  }
+
+  @When("^select group type on define account group page$")
+  public void select_group_type_on_define_account_group_page() throws Throwable {
+	  DefineAccountGroup dag= new DefineAccountGroup(dr);
+	  dag.selectGroupType();
+  }
+
+  @When("^enter group no as \"([^\"]*)\" on define account group page$")
+  public void enter_group_no_as_on_define_account_group_page(String arg1) throws Throwable {
+	  DefineAccountGroup dag= new DefineAccountGroup(dr);
+	  dag.enterGroupNo(arg1);
+  }
+
+  @Then("^click save on define account group page$")
+  public void click_save_on_define_account_group_page() throws Throwable {
+	  DefineAccountGroup dag= new DefineAccountGroup(dr);
+	  dag.clickSave(schoolname, scenario);
+  }
+
+  @Then("^click view on define account group page$")
+  public void click_view_on_define_account_group_page() throws Throwable {
+	  DefineAccountGroup dag= new DefineAccountGroup(dr);
+	  dag.clickView(schoolname, scenario);
+  }
+
 //define bank ledger
   @When("^user open define bank ledger page$")
   public void user_open_define_bank_ledger_page() throws Throwable {
@@ -734,7 +794,73 @@ public class MyStepDefs {
 	  DefineBankLedger dbl= new DefineBankLedger(dr);
 	  dbl.verifyPage(schoolname, scenario);
   }
-  
+
+  @When("^enter account name \"([^\"]*)\" on define bank ledger page$")
+  public void enter_account_name_on_define_bank_ledger_page(String arg1) throws Throwable {
+	  DefineBankLedger dbl= new DefineBankLedger(dr);
+	  dbl.enterAccountName(arg1);
+  }
+
+  @When("^select group on define bank ledger page$")
+  public void select_group_on_define_bank_ledger_page() throws Throwable {
+	  DefineBankLedger dbl= new DefineBankLedger(dr);
+	  dbl.selectGroup();
+  }
+
+  @When("^enter account address as \"([^\"]*)\" on define bank ledger page$")
+  public void enter_account_address_as_on_define_bank_ledger_page(String arg1) throws Throwable {
+	  DefineBankLedger dbl= new DefineBankLedger(dr);
+	  dbl.enterAccountAddress(arg1);
+  }
+
+  @When("^enter account city as \"([^\"]*)\" on define bank ledger$")
+  public void enter_account_city_as_on_define_bank_ledger(String arg1) throws Throwable {
+	  DefineBankLedger dbl= new DefineBankLedger(dr);
+	  dbl.enterAccountCity(arg1);
+  }
+
+  @When("^enter pin code as \"([^\"]*)\" on define bank ledger$")
+  public void enter_pin_code_as_on_define_bank_ledger(String arg1) throws Throwable {
+	  DefineBankLedger dbl= new DefineBankLedger(dr);
+	  dbl.enterPinCode(arg1);
+  }
+
+  @When("^enter email as \"([^\"]*)\" on define bank ledger$")
+  public void enter_email_as_on_define_bank_ledger(String arg1) throws Throwable {
+	  DefineBankLedger dbl= new DefineBankLedger(dr);
+	  dbl.entereMail(arg1);
+  }
+
+  @When("^enter phone no as \"([^\"]*)\" on define bank ledger$")
+  public void enter_phone_no_as_on_define_bank_ledger(String arg1) throws Throwable {
+	  DefineBankLedger dbl= new DefineBankLedger(dr);
+	  dbl.enterPhoneNo(arg1);
+  }
+
+  @When("^enter opening balance as \"([^\"]*)\" on define bank ledger$")
+  public void enter_opening_balance_as_on_define_bank_ledger(String arg1) throws Throwable {
+	  DefineBankLedger dbl= new DefineBankLedger(dr);
+	  dbl.enterOpeningBalance(arg1);
+  }
+
+  @When("^select opening balance type on define bank ledger$")
+  public void select_opening_balance_type_on_define_bank_ledger() throws Throwable {
+	  DefineBankLedger dbl= new DefineBankLedger(dr);
+	  dbl.selectOpeningBalanceType();
+  }
+
+  @Then("^click save on define bank ledger page$")
+  public void click_save_on_define_bank_ledger_page() throws Throwable {
+	  DefineBankLedger dbl= new DefineBankLedger(dr);
+	  dbl.clickSave(schoolname, scenario);
+  }
+
+  @Then("^click view on define bank ledger page$")
+  public void click_view_on_define_bank_ledger_page() throws Throwable {
+	  DefineBankLedger dbl= new DefineBankLedger(dr);
+	  dbl.clickView(schoolname, scenario);
+  }
+
 //define party ledger
   @When("^user open define party ledger page$")
   public void user_open_define_party_ledger_page() throws Throwable {
@@ -746,6 +872,84 @@ public class MyStepDefs {
   public void verify_define_party_ledger_page() throws Throwable {
 	  DefinePartyLedger dpl= new DefinePartyLedger(dr);
 	  dpl.verifyPage(schoolname, scenario);
+  }
+
+  @When("^enter account name \"([^\"]*)\" on define party ledger page$")
+  public void enter_account_name_on_define_party_ledger_page(String arg1) throws Throwable {
+	  DefinePartyLedger dpl= new DefinePartyLedger(dr);
+	  dpl.enterAccountName(arg1);
+  }
+
+  @When("^select group on define party ledger page$")
+  public void select_group_on_define_party_ledger_page() throws Throwable {
+	  DefinePartyLedger dpl= new DefinePartyLedger(dr);
+	  dpl.selectGroup();
+  }
+
+  @When("^enter account address as \"([^\"]*)\" on define party ledger page$")
+  public void enter_account_address_as_on_define_party_ledger_page(String arg1) throws Throwable {
+	  DefinePartyLedger dpl= new DefinePartyLedger(dr);
+	  dpl.enterAccountAddress(arg1);
+  }
+
+  @When("^enter account city as \"([^\"]*)\" on define party ledger$")
+  public void enter_account_city_as_on_define_party_ledger(String arg1) throws Throwable {
+	  DefinePartyLedger dpl= new DefinePartyLedger(dr);
+	  dpl.enterCity(arg1);
+  }
+
+  @When("^enter pin code as \"([^\"]*)\" on define party ledger$")
+  public void enter_pin_code_as_on_define_party_ledger(String arg1) throws Throwable {
+	  DefinePartyLedger dpl= new DefinePartyLedger(dr);
+	  dpl.enterPinCode(arg1);
+  }
+
+  @When("^enter email as \"([^\"]*)\" on define party ledger$")
+  public void enter_email_as_on_define_party_ledger(String arg1) throws Throwable {
+	  DefinePartyLedger dpl= new DefinePartyLedger(dr);
+	  dpl.enterEMail(arg1);
+  }
+
+  @When("^enter phone no as \"([^\"]*)\" on define party ledger$")
+  public void enter_phone_no_as_on_define_party_ledger(String arg1) throws Throwable {
+	  DefinePartyLedger dpl= new DefinePartyLedger(dr);
+	  dpl.enterPhoneNo(arg1);
+  }
+
+  @When("^enter pan as \"([^\"]*)\" on define party ledger$")
+  public void enter_pan_as_on_define_party_ledger(String arg1) throws Throwable {
+	  DefinePartyLedger dpl= new DefinePartyLedger(dr);
+	  dpl.enterPan(arg1);
+  }
+
+  @When("^enter tin as \"([^\"]*)\" on define party ledger$")
+  public void enter_tin_as_on_define_party_ledger(String arg1) throws Throwable {
+	  DefinePartyLedger dpl= new DefinePartyLedger(dr);
+	  dpl.enterTin(arg1);
+  }
+
+  @When("^enter opening balance as \"([^\"]*)\" on define party ledger$")
+  public void enter_opening_balance_as_on_define_party_ledger(String arg1) throws Throwable {
+	  DefinePartyLedger dpl= new DefinePartyLedger(dr);
+	  dpl.enterOpeningBalance(arg1);
+  }
+
+  @When("^select opening balance type on define party ledger$")
+  public void select_opening_balance_type_on_define_party_ledger() throws Throwable {
+	  DefinePartyLedger dpl= new DefinePartyLedger(dr);
+	  dpl.selectOpeningBalanceType();
+  }
+
+  @Then("^click save on define party ledger page$")
+  public void click_save_on_define_party_ledger_page() throws Throwable {
+	  DefinePartyLedger dpl= new DefinePartyLedger(dr);
+	  dpl.clickSave(schoolname, scenario);
+  }
+
+  @Then("^click view on define party ledger page$")
+  public void click_view_on_define_party_ledger_page() throws Throwable {
+	  DefinePartyLedger dpl= new DefinePartyLedger(dr);
+	  dpl.clickView(schoolname, scenario);
   }
 
 //define general ledger
@@ -760,7 +964,43 @@ public class MyStepDefs {
 	  DefineGeneralLedger dgl= new DefineGeneralLedger(dr);
 	  dgl.verifyPage(schoolname, scenario);
   }
-  
+
+  @When("^enter account name \"([^\"]*)\" on define general ledger page$")
+  public void enter_account_name_on_define_general_ledger_page(String arg1) throws Throwable {
+	  DefineGeneralLedger dgl= new DefineGeneralLedger(dr);
+	  dgl.enterAccountName(arg1);
+  }
+
+  @When("^select group on define general ledger page$")
+  public void select_group_on_define_general_ledger_page() throws Throwable {
+	  DefineGeneralLedger dgl= new DefineGeneralLedger(dr);
+	  dgl.selectGroup();
+  }
+
+  @When("^select is fixed assets on define general ledger$")
+  public void select_is_fixed_assets_on_define_general_ledger() throws Throwable {
+	  DefineGeneralLedger dgl= new DefineGeneralLedger(dr);
+	  dgl.selectIsFixedAssets();
+  }
+
+  @When("^enter depreciation as \"([^\"]*)\" on define general ledger$")
+  public void enter_depreciation_as_on_define_general_ledger(String arg1) throws Throwable {
+	  DefineGeneralLedger dgl= new DefineGeneralLedger(dr);
+	  dgl.enterDepreciation(arg1);
+  }
+
+  @Then("^click save on define general ledger page$")
+  public void click_save_on_define_general_ledger_page() throws Throwable {
+	  DefineGeneralLedger dgl= new DefineGeneralLedger(dr);
+	  dgl.clickSave(schoolname, scenario);
+  }
+
+  @Then("^click view on define general ledger page$")
+  public void click_view_on_define_general_ledger_page() throws Throwable {
+	  DefineGeneralLedger dgl= new DefineGeneralLedger(dr);
+	  dgl.clickView(schoolname, scenario);
+  }
+
 //bank payment voucher
   @When("^user open bank payment voucher page$")
   public void user_open_bank_payment_voucher_page() throws Throwable {

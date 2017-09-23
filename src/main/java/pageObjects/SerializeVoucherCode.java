@@ -46,6 +46,7 @@ public class SerializeVoucherCode {
   public void clickHistory(String str, Collection<String>sc ) throws InterruptedException, IOException
   {
 	 history.click();
+     u.verifyShow(dr, str, r, sc);
 	 Thread.sleep(5000);
 	 u.captureScreenshot(dr, str, r,sc);
   }

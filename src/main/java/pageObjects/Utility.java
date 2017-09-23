@@ -46,6 +46,31 @@ public class Utility {
 	   } 
 	   }Thread.sleep(800);
 	}
+
+	public void verifyShow(WebDriver dr,String school, String page,Collection<String> sc)throws IOException
+	{
+		ArrayList<String>list= new ArrayList<String>();
+		Date date= new Date();
+		int size= sc.toString().length();
+		String scenario= sc.toString().substring(2,size-1);
+		String msg;
+
+		dr.switchTo().defaultContent();
+		try {
+			dr.findElement(By.id("defaultSpeechbubbleHeader"));
+			msg = dr.findElement(By.id("defaultSpeechbubbleHeader")).getText();
+			list.add(date.toString());
+			list.add(scenario);
+			list.add(page);
+			list.add("Show:"+msg);
+			prepareErrorLog(list,school);
+		}
+		catch(Exception e)
+		{
+			System.out.println("");
+		}
+	}
+
 	public void verifySave(WebDriver dr,String school, String page,Collection<String> sc)throws IOException
 	{
 		ArrayList<String> list= new ArrayList<String>();

@@ -3,9 +3,9 @@ Feature: Account reports
      So that I can verify that there is no problem in report loading
 
   Background: 
-    Given user enter "http://erp.stkarenssecondaryschool.com"
-    When user enter username "admin" and password "stkss#54321techpass"
-    And passes school name "st karen"
+    Given user enter "http://qaerp.franciscanecare.net"
+    When user enter username "admin" and password "Admin#franciscan"
+    And passes school name "qaerp"
     And click signin
     Then account home page is opened
 

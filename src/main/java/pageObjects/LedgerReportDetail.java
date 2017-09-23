@@ -80,6 +80,7 @@ public class LedgerReportDetail {
   public void clickShow(String str, Collection<String>sc ) throws InterruptedException, IOException
   {
 	 show.click();
+     u.verifyShow(dr, str, r, sc);
 	 Thread.sleep(5000);
 	 u.captureScreenshot(dr, str, r,sc);
   }

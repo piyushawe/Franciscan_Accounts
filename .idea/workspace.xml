@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12f8c4d6-56a6-4437-84fe-89c453dea643" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/feature/VerifySaveView.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/runner/VerifySaveViewRunner.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/cucumber_html_report/formatter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/cucumber_html_report/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/cucumber_html_report/jquery-1.8.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/cucumber_html_report/style.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pageObjects/Utility.class" afterPath="$PROJECT_DIR$/target/classes/pageObjects/Utility.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/feature/Reports.feature" afterPath="$PROJECT_DIR$/feature/Reports.feature" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/feature/VerifyPage.feature" afterPath="$PROJECT_DIR$/feature/VerifyPage.feature" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/cucumber.json" afterPath="$PROJECT_DIR$/target/cucumber.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/cucumber.xml" afterPath="$PROJECT_DIR$/target/cucumber.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/cucumber_html_report/report.js" afterPath="$PROJECT_DIR$/target/cucumber_html_report/report.js" />
@@ -722,7 +714,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506152281471</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="committed on 23 sep 2017">
+      <created>1506159355356</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1506159355356</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">

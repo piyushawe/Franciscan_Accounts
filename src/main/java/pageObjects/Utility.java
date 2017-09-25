@@ -26,7 +26,8 @@ public class Utility {
 	{
 		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 		File f= ((TakesScreenshot)dr).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(f,new File("D:/account_screenshots/"+str+"/"+r+"/"+r+sc+timeStamp+".png"));
+		//FileUtils.copyFile(f,new File("D:/account_screenshots/"+str+"/"+r+"/"+r+sc+timeStamp+".png"));
+		FileUtils.copyFile(f,new File("E:/account_screenshots/"+str+"/"+r+"/"+r+sc+timeStamp+".png"));
 	}
 	
 	public void selectDate(WebDriver dr, WebElement date, String mm, String yy, String dd) throws InterruptedException 

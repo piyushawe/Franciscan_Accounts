@@ -3,9 +3,9 @@ Feature: Account reports
      So that I can verify that there is no problem in report loading
 
   Background: 
-    Given user enter "http://erptraining.franciscanecare.net/Secure/"
-    When user enter username "admin" and password "fspl@12345"
-    And passes school name "erptraining"
+    Given user enter "http://qaerp.franciscanecare.net"
+    When user enter username "admin" and password "Admin#franciscan"
+    And passes school name "qaerp1"
     And click signin
     Then account home page is opened
 
@@ -19,8 +19,8 @@ Feature: Account reports
     Then click show to open daily cash status report
 
     Examples: 
-      | account |
-      | Cash    |
+      | account         |
+      | Cash On Hand    |
 
   @scenario2
   Scenario Outline: To open daily cash status report when consolidated report is selected
@@ -31,9 +31,9 @@ Feature: Account reports
     And click consolidated report check box on daily cash status page
     Then click show to open daily cash status report
 
-    Examples: 
-      | account |
-      | Cash    |
+    Examples:
+      | account         |
+      | Cash On Hand    |
 
   #bank ledger
   @scenario3
@@ -45,8 +45,8 @@ Feature: Account reports
     Then click show to open bank ledger report
 
     Examples: 
-      | account       |
-      | Axis Bank ltd |
+      | account |
+      | Account |
 
   #ledger report
   @scenario4
@@ -58,8 +58,8 @@ Feature: Account reports
     Then click show to open ledger report
 
     Examples: 
-      | account      |
-      | Cash In Hand |
+      | account    |
+      | Daily Cash |
 
   #depreciation chart
   @scenario5
@@ -155,8 +155,8 @@ Feature: Account reports
     Then click show to open reconciliation statement report
 
     Examples: 
-      | bank          |
-      | Axis Bank ltd |
+      | bank    |
+      | Account |
 
   @scenario16
   Scenario Outline: To open entry type wise report when date wise consolidated report checkbox is selected
@@ -169,8 +169,8 @@ Feature: Account reports
     Then click show to open reconciliation statement report
 
     Examples: 
-      | bank          |
-      | Axis Bank ltd |
+      | bank    |
+      | Account |
 
   #group wise report
   @scenario17
@@ -183,8 +183,8 @@ Feature: Account reports
     Then click show to open group wise report
 
     Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+      | ledger group         | account                  |
+      | Depreciation         | Depreciation Reserve A/C |
 
   #cash/bank book
   @scenario18
@@ -197,9 +197,9 @@ Feature: Account reports
     And select account "<account>" on cash/bank book page
     Then click show to open cash/bank book report
 
-    Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+    Examples:
+      | ledger group | account      |
+      | CASH         | Cash in hand |
 
   @scenario19
   Scenario Outline: To open cash/bank book report when all is selected
@@ -211,9 +211,9 @@ Feature: Account reports
     And select account "<account>" on cash/bank book page
     Then click show to open cash/bank book report
 
-    Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+    Examples:
+      | ledger group | account      |
+      | CASH         | Cash in hand |
 
   @scenario20
   Scenario Outline: To open cash/bank book report when cash/bank is selected with detail
@@ -226,9 +226,9 @@ Feature: Account reports
     And select account "<account>" on cash/bank book page
     Then click show to open cash/bank book report
 
-    Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+    Examples:
+      | ledger group | account      |
+      | CASH         | Cash in hand |
 
   @scenario21
   Scenario Outline: To open cash/bank book report when all is selected with detail
@@ -241,9 +241,9 @@ Feature: Account reports
     And select account "<account>" on cash/bank book page
     Then click show to open cash/bank book report
 
-    Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+    Examples:
+      | ledger group | account      |
+      | CASH         | Cash in hand |
 
   #ledger report detail
   @scenario22
@@ -255,9 +255,9 @@ Feature: Account reports
     And select account "<account>" on ledger report detail page
     Then click show to open ledger report detail
 
-    Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+    Examples:
+      | ledger group | account      |
+      | CASH         | Cash in hand |
 
   @scenario23
   Scenario Outline: To open ledger report detail when consolidated report is selected
@@ -269,9 +269,9 @@ Feature: Account reports
     And select consolidated report on ledger report detail page
     Then click show to open ledger report detail
 
-    Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+    Examples:
+      | ledger group | account      |
+      | CASH         | Cash in hand |
 
   @scenario24
   Scenario Outline: To open ledger report detail student wise
@@ -283,9 +283,9 @@ Feature: Account reports
     And select student wise on ledger report detail page
     Then click show to open ledger report detail
 
-    Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+    Examples:
+      | ledger group | account      |
+      | CASH         | Cash in hand |
 
   @scenario25
   Scenario Outline: To open ledger report detail when both checkboxes are selected
@@ -298,9 +298,9 @@ Feature: Account reports
     And select student wise on ledger report detail page
     Then click show to open ledger report detail
 
-    Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+    Examples:
+      | ledger group | account      |
+      | CASH         | Cash in hand |
 
   #trial balance new
   @scenario26
@@ -312,9 +312,9 @@ Feature: Account reports
     And select account "<account>" on trial balance new page
     Then click show to open trial balance new page
 
-    Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+    Examples:
+      | ledger group | account      |
+      | CASH         | Cash in hand |
 
   @scenario27
   Scenario Outline: To open ledger report detail without zero amount
@@ -326,9 +326,9 @@ Feature: Account reports
     And select without zero amount on ledger report detail page
     Then click show to open trial balance new page
 
-    Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+    Examples:
+      | ledger group | account      |
+      | CASH         | Cash in hand |
 
   @scenario28
   Scenario Outline: To open ledger report detail closing without zero amount
@@ -340,9 +340,9 @@ Feature: Account reports
     And select closing without zero amount on ledger report detail page
     Then click show to open trial balance new page
 
-    Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+    Examples:
+      | ledger group | account      |
+      | CASH         | Cash in hand |
 
   @scenario29
   Scenario Outline: To open ledger report detail when both checkboxes are selected
@@ -355,9 +355,9 @@ Feature: Account reports
     And select closing without zero amount on ledger report detail page
     Then click show to open trial balance new page
 
-    Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+    Examples:
+      | ledger group | account      |
+      | CASH         | Cash in hand |
 
   #trial balance
   @scenario30
@@ -371,9 +371,9 @@ Feature: Account reports
     And click "group wise" on trial balance page
     Then click show to open trial balance page
 
-    Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+    Examples:
+      | ledger group | account      |
+      | CASH         | Cash in hand |
 
   @scenario31
   Scenario Outline: To open trial balance without opening ledger wise
@@ -386,9 +386,9 @@ Feature: Account reports
     And click "ledger wise" on trial balance page
     Then click show to open trial balance page
 
-    Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+    Examples:
+      | ledger group | account      |
+      | CASH         | Cash in hand |
 
   @scenario32
   Scenario Outline: To open trial balance with opening group wise
@@ -401,9 +401,9 @@ Feature: Account reports
     And click "group wise" on trial balance page
     Then click show to open trial balance page
 
-    Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+    Examples:
+      | ledger group | account      |
+      | CASH         | Cash in hand |
 
   @scenario33
   Scenario Outline: To open trial balance with opening ledger wise
@@ -416,9 +416,9 @@ Feature: Account reports
     And click "ledger wise" on trial balance page
     Then click show to open trial balance page
 
-    Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+    Examples:
+      | ledger group | account      |
+      | CASH         | Cash in hand |
 
   @scenario34
   Scenario Outline: To open trial balance only opening group wise
@@ -431,9 +431,9 @@ Feature: Account reports
     And click "group wise" on trial balance page
     Then click show to open trial balance page
 
-    Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+    Examples:
+      | ledger group | account      |
+      | CASH         | Cash in hand |
 
   @scenario35
   Scenario Outline: To open trial balance only opening ledger wise
@@ -446,6 +446,6 @@ Feature: Account reports
     And click "ledger wise" on trial balance page
     Then click show to open trial balance page
 
-    Examples: 
-      | ledger group | account       |
-      | Bank         | Axis Bank ltd |
+    Examples:
+      | ledger group | account      |
+      | CASH         | Cash in hand |

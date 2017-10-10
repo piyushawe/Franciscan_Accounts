@@ -27,6 +27,7 @@ public class DailyCashStatus {
 	  this.dr=d;
 	  PageFactory.initElements(d, this);
   }
+
   public void openDailyCashStatus()
   {
 	  WebElement menu= dr.findElement(By.xpath("//img[@src='/Images/layout/Reports.png']"));
@@ -35,14 +36,17 @@ public class DailyCashStatus {
 	  dr.findElement(By.linkText("Daily Cash Status")).click();
 	  dr.switchTo().frame(dr.findElement(By.xpath("//iframe[@src='/Report/Account/RptDailyCashStatus.aspx']")));
   }
+
   public void selectFromDate(String mm, String yy, String dd) throws InterruptedException
   {
 	  u.selectDate(dr, fromdate, mm, yy, dd);
   }
+
   public void selectToDate(String mm, String yy, String dd) throws InterruptedException
   {
 	  u.selectDate(dr, todate, mm, yy, dd);
   }
+
   public void selectCashAccount(String cacc)
   {
 	  new Select(cashaccount).selectByVisibleText(cacc);

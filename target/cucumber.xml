@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="20" time="358.878667">
+<testcase classname="Franciscan Account" name="To verify account master setting page" time="23.431024">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open account master setting page..................................passed
+Then verify account master setting page.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify account petty cash setting page" time="14.424089">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open account petty cash setting page..............................passed
+Then verify account petty cash setting page.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify voucher print settings page" time="22.023281">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open voucher print settings page..................................passed
+Then verify voucher print settings page.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify voucher code settings page" time="15.141106">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open voucher code settings page...................................passed
+Then verify voucher code settings page......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify define narration master page" time="14.782793">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open define narration master page.................................passed
+Then verify define narration master page....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify define account group page" time="14.694393">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open define account group page....................................passed
+Then verify define account group page.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify define bank ledger page" time="14.496917">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open define bank ledger page......................................passed
+Then verify define bank ledger page.........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify define party ledger page" time="15.039193">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open define party ledger page.....................................passed
+Then verify define party ledger page........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify define general ledger page" time="15.191674">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open define general ledger page...................................passed
+Then verify define general ledger page......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify bank payment voucher page" time="17.982491">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open bank payment voucher page....................................passed
+Then verify bank payment voucher page.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify cash payment voucher page" time="18.27242">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open cash payment voucher page....................................passed
+Then verify cash payment voucher page.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify bank receipt voucher page" time="19.089803">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open bank receipt voucher page....................................passed
+Then verify bank receipt voucher page.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify cash receipt voucher page" time="16.532544">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open cash receipt voucher page....................................passed
+Then verify cash receipt voucher page.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify contra voucher page" time="17.275674">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open contra voucher page..........................................passed
+Then verify contra voucher page.............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify journal voucher page" time="24.325887">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open journal voucher page.........................................passed
+Then verify journal voucher page............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify cheque clearing page" time="13.825311">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open cheque clearing page.........................................passed
+Then verify cheque clearing page............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify salary payment voucher page" time="18.482586">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open salary payment voucher page..................................passed
+Then verify salary payment voucher page.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify voucher image upload page" time="19.254996">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open voucher image upload page....................................passed
+Then verify voucher image upload page.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify cheque printing page" time="18.8193">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open cheque printing page.........................................passed
+Then verify cheque printing page............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Franciscan Account" name="To verify define group nature page" time="25.793185">
+<system-out><![CDATA[Given user enter "http://erptraining.franciscanecare.net/Secure/"...........passed
+When user enter username "admin" and password "fspl@12345"..................passed
+And passes school name "erptraining"........................................passed
+And click signin............................................................passed
+Then account home page is opened............................................passed
+When user open define group nature page.....................................passed
+Then verify define group nature page........................................passed
+]]></system-out>
+</testcase>
+</testsuite>

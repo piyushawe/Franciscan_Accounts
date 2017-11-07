@@ -13,8 +13,8 @@ import cucumber.api.junit.Cucumber;
 		        ,plugin= {"pretty","html:target/cucumber_html_report",
 		        	    		  "json:target/cucumber.json",
 		        	    	      "junit:target/cucumber.xml"}
-		       //,tags= {"@scenario20"}
+		       //,tags= {"@scenario1"}
 		)
 public class VerifyPageRunner {
 
-} 
+}

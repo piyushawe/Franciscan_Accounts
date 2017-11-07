@@ -1,6 +1,7 @@
 package accountsPageObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -33,7 +34,9 @@ public class DefineAccountGroup {
   }
   public void openDefineAccountGroup()
   {
-      WebElement menu= dr.findElement(By.xpath("//img[@src='/Images/layout/Accounts.png']"));
+      ArrayList<String> tabs2 = new ArrayList<String> (dr.getWindowHandles());
+      dr.switchTo().window(tabs2.get(1));
+      WebElement menu= dr.findElement(By.xpath("//*[contains(text(),'Accounts')]"));
  	  Actions builder= new Actions(dr);
 	  builder.moveToElement(menu).build().perform();
 	  dr.findElement(By.linkText("Define Account Group")).click();

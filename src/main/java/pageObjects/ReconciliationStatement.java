@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.openqa.selenium.By;
@@ -21,6 +22,8 @@ public class ReconciliationStatement {
   @FindBy(id="ContentPlaceHolder1_ddlAcc")WebElement bank;
   @FindBy(id="ContentPlaceHolder1_ddlchqstatus")WebElement chequestatus;
   @FindBy(id="ContentPlaceHolder1_chkstu")WebElement withstudentwise;
+  @FindBy(id= "ContentPlaceHolder1_chkcon")WebElement consolidated;
+  @FindBy(id = "ContentPlaceHolder1_ddlorderby")WebElement orderBy;
   @FindBy(name="ctl00$ContentPlaceHolder1$SingleButton1$ctl00")WebElement show;
   
   public ReconciliationStatement(WebDriver d)
@@ -30,7 +33,9 @@ public class ReconciliationStatement {
   }
   public void openReconciliationStatement()
   {
-	  WebElement menu= dr.findElement(By.xpath("//img[@src='/Images/layout/Reports.png']"));
+      ArrayList<String> tabs2 = new ArrayList<String> (dr.getWindowHandles());
+      dr.switchTo().window(tabs2.get(1));
+	  WebElement menu= dr.findElement(By.xpath("//*[contains(text(),'Reports')]"));
 	  Actions builder= new Actions(dr);
 	  builder.moveToElement(menu).build().perform();
 	  dr.findElement(By.linkText("Reconciliation Statement")).click();
@@ -44,17 +49,25 @@ public class ReconciliationStatement {
   {
 	  u.selectDate(dr, todate, mm, yy, dd);
   }
-  public void selectBank(String b)
+  public void selectBank(int b)
   {
-	  new Select(bank).selectByVisibleText(b);
+	  new Select(bank).selectByIndex(b);
   }
   public void selectChequeStatus(String cstatus)
   {
 	  new Select(chequestatus).selectByVisibleText(cstatus);
   }
+
   public void selectWithStudentWise()
   {
 	  withstudentwise.click();
+  }
+
+  public void selectConsolidated(){
+      consolidated.click();
+  }
+  public void selectorderBy(String orderby){
+      new Select(orderBy).selectByVisibleText(orderby);
   }
   public void clickShow(String str, Collection<String>sc ) throws InterruptedException, IOException
   {

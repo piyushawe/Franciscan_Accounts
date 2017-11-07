@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.openqa.selenium.By;
@@ -28,7 +29,9 @@ public class BankLedger {
   }
   public void openBankLedger()
   {
-	  WebElement menu= dr.findElement(By.xpath("//img[@src='/Images/layout/Reports.png']"));
+      ArrayList<String> tabs2 = new ArrayList<String> (dr.getWindowHandles());
+      dr.switchTo().window(tabs2.get(1));
+      WebElement menu= dr.findElement(By.xpath("//*[contains(text(),'Reports')]"));
 	  Actions builder= new Actions(dr);
 	  builder.moveToElement(menu).build().perform();
 	  dr.findElement(By.linkText("Bank Ledger")).click();
@@ -42,9 +45,9 @@ public class BankLedger {
   {
 	  u.selectDate(dr, todate, mm, yy, dd);
   }
-  public void selectBankAccount(String bacc)
+  public void selectBankAccount(int bacc)
   {
-	  new Select(bankaccount).selectByVisibleText(bacc);
+	  new Select(bankaccount).selectByIndex(bacc);
   }
   public void clickShow(String str, Collection<String>sc ) throws InterruptedException, IOException
   {

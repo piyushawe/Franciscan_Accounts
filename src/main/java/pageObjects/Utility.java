@@ -26,8 +26,8 @@ public class Utility {
 	{
 		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 		File f= ((TakesScreenshot)dr).getScreenshotAs(OutputType.FILE);
-		//FileUtils.copyFile(f,new File("D:/account_screenshots/"+str+"/"+r+"/"+r+sc+timeStamp+".png"));
-		FileUtils.copyFile(f,new File("E:/account_screenshots/"+str+"/"+r+"/"+r+sc+timeStamp+".png"));
+		FileUtils.copyFile(f,new File("D:/account_screenshots/"+str+"/"+r+"/"+r+sc+timeStamp+".png"));
+		//FileUtils.copyFile(f,new File("E:/account_screenshots/"+str+"/"+r+"/"+r+sc+timeStamp+".png"));
 	}
 	
 	public void selectDate(WebDriver dr, WebElement date, String mm, String yy, String dd) throws InterruptedException 
@@ -35,7 +35,7 @@ public class Utility {
 		date.click();
 		Thread.sleep(800);
 	  	new Select(dr.findElement(By.className("datepick-new-month"))).selectByVisibleText(mm);
-	    Thread.sleep(800);
+	    Thread.sleep(2000);
 	    new Select(dr.findElement(By.className("datepick-new-year"))).selectByVisibleText(yy);
 	  	Thread.sleep(800);
 	    WebElement myw=dr.findElement(By.className("datepick"));
@@ -100,7 +100,7 @@ public class Utility {
 			list.add(date.toString());
 			list.add(scenario);
 			list.add(page);
-			list.add("Save: Message Did Not Appear ");
+			list.add("Save: Message Did Not Appear");
 			prepareErrorLog(list,school);
 		}
 		msg = dr.findElement(By.id("defaultSpeechbubbleHeader")).getText();
@@ -159,12 +159,12 @@ public class Utility {
 	public void prepareErrorLog(ArrayList<String>lst, String school )throws IOException
 	{
 		ArrayList<String>list= new ArrayList<String>(Arrays.asList("Date","Scenario", "Page","Error Message"));
-		//File file = new File("D:/TestReports/" + school + "/Account/ErrorLog.xls");
-		File file = new File("E:/TestReports/" + school + "/Account/ErrorLog.xls");
+		File file = new File("D:/DemoERP/TestReports/" + school + "/Account/ErrorLog.xls");
+		//File file = new File("E:/TestReports/" + school + "/Account/ErrorLog.xls");
 		File pdir= file.getParentFile();
 		FileInputStream fis;
 		HSSFWorkbook wb;
-		if(!file.exists()) {
+			if(!file.exists()) {
 			System.out.println("File Does Not Exist");
 			if (pdir != null)
 				pdir.mkdirs();

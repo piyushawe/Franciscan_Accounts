@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.openqa.selenium.By;
@@ -30,7 +31,9 @@ public class DailyCashStatus {
 
   public void openDailyCashStatus()
   {
-	  WebElement menu= dr.findElement(By.xpath("//img[@src='/Images/layout/Reports.png']"));
+      ArrayList<String> tabs2 = new ArrayList<String> (dr.getWindowHandles());
+      dr.switchTo().window(tabs2.get(1));
+      WebElement menu= dr.findElement(By.xpath("//*[contains(text(),'Reports')]"));
 	  Actions builder= new Actions(dr);
 	  builder.moveToElement(menu).build().perform();
 	  dr.findElement(By.linkText("Daily Cash Status")).click();
@@ -47,9 +50,9 @@ public class DailyCashStatus {
 	  u.selectDate(dr, todate, mm, yy, dd);
   }
 
-  public void selectCashAccount(String cacc)
+  public void selectCashAccount(int cacc)
   {
-	  new Select(cashaccount).selectByVisibleText(cacc);
+	  new Select(cashaccount).selectByIndex(cacc);
   }
   public void selectConsolidatedReport()
   {

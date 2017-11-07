@@ -1,6 +1,7 @@
 package accountsPageObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.openqa.selenium.By;
@@ -23,11 +24,13 @@ public class ChequePrinting {
   }
   public void openChequePrinting()
   {
-      WebElement menu= dr.findElement(By.xpath("//img[@src='/Images/layout/Accounts.png']"));
+      ArrayList<String> tabs2 = new ArrayList<String> (dr.getWindowHandles());
+      dr.switchTo().window(tabs2.get(1));
+      WebElement menu= dr.findElement(By.xpath("//*[contains(text(),'Accounts')]"));
  	  Actions builder= new Actions(dr);
 	  builder.moveToElement(menu).build().perform();
 	  dr.findElement(By.linkText("Cheque Printing")).click();
-	  dr.switchTo().frame(dr.findElement(By.xpath("//iframe[@src='/AccountManager/ChequePrinting.aspx']")));
+	  dr.switchTo().frame(dr.findElement(By.id("Cheque Printing")));
   }
   public void verifyPage(String schl,Collection<String>sc) throws IOException, InterruptedException
   {

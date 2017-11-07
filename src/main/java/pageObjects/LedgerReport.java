@@ -1,7 +1,9 @@
 package pageObjects;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -28,7 +30,9 @@ public class LedgerReport {
   }
   public void openLedgerReport()
   {
-	  WebElement menu= dr.findElement(By.xpath("//img[@src='/Images/layout/Reports.png']"));
+      ArrayList<String> tabs2 = new ArrayList<String> (dr.getWindowHandles());
+      dr.switchTo().window(tabs2.get(1));
+	  WebElement menu= dr.findElement(By.xpath("//*[contains(text(),'Reports')]"));
 	  Actions builder= new Actions(dr);
 	  builder.moveToElement(menu).build().perform();
 	  dr.findElement(By.linkText("Ledger Report")).click();
@@ -42,9 +46,17 @@ public class LedgerReport {
   {
 	  u.selectDate(dr, todate, mm, yy, dd);
   }
-  public void selectPartyAccount(String pacc)
+  public void selectAccount(int pacc)
   {
-	  new Select(partyaccount).selectByVisibleText(pacc);
+      dr.findElement(By.xpath("//*[@id=\"MainLeftPanel\"]/div/div/div[3]/div/div/button")).click();
+      WebElement select= dr.findElement(By.xpath("//*[@id=\"MainLeftPanel\"]/div/div/div[3]/div/div/div/ul"));
+      List<WebElement> options = select.findElements(By.xpath("//span[class='text']"));
+      System.out.println(options.size());
+      if (options.isEmpty())
+          System.out.println("No Value Present");
+      else
+          options.get(pacc).click();
+	  //new Select(partyaccount).selectByIndex(pacc);
   }
   public void clickShow(String str, Collection<String>sc ) throws InterruptedException, IOException
   {

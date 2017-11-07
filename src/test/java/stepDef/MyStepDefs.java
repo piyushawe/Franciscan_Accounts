@@ -2,25 +2,12 @@ package stepDef;
 
 import java.util.Collection;
 
+import accountsPageObject.*;
+import masterSettingsPageObject.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import accountsPageObject.BankPaymentVoucher;
-import accountsPageObject.BankReceiptVoucher;
-import accountsPageObject.CashPaymentVoucher;
-import accountsPageObject.CashReceiptVoucher;
-import accountsPageObject.ChequeClearing;
-import accountsPageObject.ChequePrinting;
-import accountsPageObject.ContraVoucher;
-import accountsPageObject.DefineAccountGroup;
-import accountsPageObject.DefineBankLedger;
-import accountsPageObject.DefineGeneralLedger;
-import accountsPageObject.DefineGroupNature;
-import accountsPageObject.DefinePartyLedger;
-import accountsPageObject.JournalVoucher;
-import accountsPageObject.SalaryPaymentVoucher;
-import accountsPageObject.VoucherImageUpload;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -28,27 +15,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import globalMastersPageObject.DefineNarrationMaster;
-import masterSettingsPageObject.AccountMasterSetting;
-import masterSettingsPageObject.AccountPettyCashSetting;
-import masterSettingsPageObject.VoucherCodeSettings;
-import masterSettingsPageObject.VoucherPrintSettings;
-import pageObjects.BalanceSheet;
-import pageObjects.BankLedger;
-import pageObjects.CashBankBook;
-import pageObjects.DailyCashStatus;
-import pageObjects.DayBook;
-import pageObjects.DepreciationChart;
-import pageObjects.DepreciationDetailItemWise;
-import pageObjects.EntryTypeWiseReport;
-import pageObjects.GroupWiseReport;
-import pageObjects.IncomeAndExpenditure;
-import pageObjects.JournalLedgerBook;
-import pageObjects.LedgerReport;
-import pageObjects.LedgerReportDetail;
-import pageObjects.ProfitAndLoss;
-import pageObjects.ReconciliationStatement;
-import pageObjects.TrialBalance;
-import pageObjects.TrialBalanceNew;
+import pageObjects.*;
 
 public class MyStepDefs {
   WebDriver dr;
@@ -58,8 +25,8 @@ public class MyStepDefs {
 	@Before
 	public void launchBrowser(Scenario sc)
 	{
-		//System.setProperty("webdriver.chrome.driver", "D:\\selenium\\chrome\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", "E:\\chromedriver\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "D:\\selenium\\chrome\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "E:\\chromedriver\\chromedriver_win32\\chromedriver.exe");
 		dr= new ChromeDriver();
 		dr.manage().window().maximize();
 		scenario= sc.getSourceTagNames();
@@ -96,7 +63,9 @@ public class MyStepDefs {
 
 	@Then("^account home page is opened$")
 	public void account_home_page_is_opened() throws Throwable {
-	    dr.findElement(By.xpath("//img[@src='images/big/Account-Manager.png']")).click();
+	   // dr.findElement(By.xpath("//img[@src='images/big/Account-Manager.png']")).click();
+		dr.findElement(By.xpath("//img[@src='/Images/NewLayout/erp-serv-icon/Account-Manager.png']")).click();
+		Thread.sleep(500);
 	}
 
 //daily cash status
@@ -119,7 +88,7 @@ public class MyStepDefs {
 	}
 
 	@When("^select cash account \"([^\"]*)\" on daily cash status page$")
-	public void select_cash_account_on_daily_cash_status_page(String arg1) throws Throwable {
+	public void select_cash_account_on_daily_cash_status_page(int arg1) throws Throwable {
 		DailyCashStatus d= new DailyCashStatus(dr);
 		d.selectCashAccount(arg1);
 	}
@@ -156,7 +125,7 @@ public class MyStepDefs {
 	}
 
 	@When("^select bank account \"([^\"]*)\" on bank ledger page$")
-	public void select_bank_account_on_bank_ledger_page(String arg1) throws Throwable {
+	public void select_bank_account_on_bank_ledger_page(int arg1) throws Throwable {
 		BankLedger bl= new BankLedger(dr);
 		bl.selectBankAccount(arg1);
 	}
@@ -186,10 +155,10 @@ public class MyStepDefs {
 		lr.selectToDate(arg1, arg2, arg3);
 	}
 
-	@When("^select party account \"([^\"]*)\" on ledger report page$")
-	public void select_party_account_on_ledger_report_page(String arg1) throws Throwable {
+	@When("^select account \"([^\"]*)\" on ledger report page$")
+	public void select_account_on_ledger_report_page(int arg1) throws Throwable {
 		LedgerReport lr= new LedgerReport(dr);
-		lr.selectPartyAccount(arg1);
+		lr.selectAccount(arg1);
 	}
 
 	@Then("^click show to open ledger report$")
@@ -389,7 +358,7 @@ public class MyStepDefs {
   }
 
   @When("^select bank \"([^\"]*)\" on reconciliation statement page$")
-  public void select_bank_on_reconciliation_statement_page(String arg1) throws Throwable {
+  public void select_bank_on_reconciliation_statement_page(int arg1) throws Throwable {
 	 ReconciliationStatement rs= new ReconciliationStatement(dr);
 	 rs.selectBank(arg1);
   }
@@ -405,12 +374,69 @@ public class MyStepDefs {
 	  ReconciliationStatement rs= new ReconciliationStatement(dr);
 	  rs.selectWithStudentWise();
   }
-  
+
+  @When("^select consolidated on reconciliation statement page$")
+  public void select_consolidated_on_reconciliation_statement_page() throws Throwable {
+	  ReconciliationStatement rs= new ReconciliationStatement(dr);
+	  rs.selectConsolidated();
+  }
+
+  @When("^select order by as \"([^\"]*)\" on reconciliation statement page$")
+   public void select_order_by_as_on_reconciliation_statement_page(String arg1) throws Throwable {
+		new ReconciliationStatement(dr).selectorderBy(arg1);
+  }
+
   @Then("^click show to open reconciliation statement report$")
   public void click_show_to_open_reconciliation_statement_report() throws Throwable {
 	  ReconciliationStatement rs= new ReconciliationStatement(dr);
 	  rs.clickShow(schoolname, scenario);
   }
+
+//ledger report detail new
+   @When("^user opens ledger report detail new page$")
+   public void user_opens_ledger_report_detail_new_page() throws Throwable {
+		new LedgerReportDetailNew(dr).openLedgerReportDetailNew();
+   }
+
+   @When("^select from date as month \"([^\"]*)\" year \"([^\"]*)\" and day \"([^\"]*)\" on ledger report detail new page$")
+   public void select_from_date_as_month_year_and_day_on_ledger_report_detail_new_page(String arg1, String arg2, String arg3) throws Throwable {
+		new LedgerReportDetailNew(dr).selectFromDate(arg1, arg2, arg3);
+   }
+
+	@When("^select to date as month \"([^\"]*)\" year \"([^\"]*)\" and day \"([^\"]*)\" on ledger report detail new page$")
+	public void select_to_date_as_month_year_and_day_on_ledger_report_detail_new_page(String arg1, String arg2, String arg3) throws Throwable {
+		new LedgerReportDetailNew(dr).selectToDate(arg1, arg2, arg3);
+	}
+
+	@When("^select ledger group \"([^\"]*)\" on ledger report detail new page$")
+	public void select_ledger_group_on_ledger_report_detail_new_page(int arg1) throws Throwable {
+        new LedgerReportDetailNew(dr).selectLedgerGroup(arg1);
+	}
+
+	@When("^select account \"([^\"]*)\" on ledger report detail new page$")
+	public void select_account_on_ledger_report_detail_new_page(int arg1) throws Throwable {
+        new LedgerReportDetailNew(dr).selectAccount(arg1);
+	}
+
+	@Then("^click show to open ledger report detail new$")
+	public void click_show_to_open_ledger_report_detail_new() throws Throwable {
+        new LedgerReportDetailNew(dr).clickShow(schoolname, scenario);
+	}
+
+	@When("^select without remark on ledger report detail new page$")
+	public void select_without_remark_on_ledger_report_detail_new_page() throws Throwable {
+		new LedgerReportDetailNew(dr).clickWithoutRemark();
+	}
+
+	@When("^select consolidated on ledger report detail new page$")
+	public void select_consolidated_on_ledger_report_detail_new_page() throws Throwable {
+		new LedgerReportDetailNew(dr).clickConsolidatedReport();
+	}
+
+	@When("^select student wise on ledger report detail new page$")
+	public void select_student_wise_on_ledger_report_detail_new_page() throws Throwable {
+		new LedgerReportDetailNew(dr).clickStudentWise();
+	}
 
 //group wise report
   @When("^user opens group wise report page$")
@@ -432,13 +458,13 @@ public class MyStepDefs {
   }
 
   @When("^select ledger group \"([^\"]*)\" on group wise report page$")
-  public void select_ledger_group_on_group_wise_report_page(String arg1) throws Throwable {
+  public void select_ledger_group_on_group_wise_report_page(int arg1) throws Throwable {
 	  GroupWiseReport gr= new GroupWiseReport(dr);
 	  gr.selectLedgerGroup(arg1);
   }
 
   @When("^select account \"([^\"]*)\" on group wise report page$")
-  public void select_account_on_group_wise_report_page(String arg1) throws Throwable {
+  public void select_account_on_group_wise_report_page(int arg1) throws Throwable {
 	  GroupWiseReport gr= new GroupWiseReport(dr);
 	  gr.selectAccount(arg1);
   }
@@ -448,6 +474,17 @@ public class MyStepDefs {
 	  GroupWiseReport gr= new GroupWiseReport(dr);
 	  gr.clickShow(schoolname, scenario);
   }
+
+//fees account mismatch
+   @When("^user opens fees account mismatch report$")
+    public void user_opens_fees_account_mismatch_report() throws Throwable {
+	    new FeesAccountMismatch(dr).openFeesAccountMismatch();
+    }
+
+	@Then("^takes screenshot of it$")
+	public void takes_screenshot_of_it() throws Throwable {
+		new FeesAccountMismatch(dr).takeScreenshot(schoolname, scenario);
+	}
 
 //cash/bank book
   @When("^user opens cash/bank book page$")
@@ -469,13 +506,13 @@ public class MyStepDefs {
   }
 
   @When("^select ledger group \"([^\"]*)\" on cash/bank book page$")
-  public void select_ledger_group_on_cash_bank_book_page(String arg1) throws Throwable {
+  public void select_ledger_group_on_cash_bank_book_page(int arg1) throws Throwable {
 	  CashBankBook cbb= new CashBankBook(dr);
 	  cbb.selectLedgerGroup(arg1);
   }
 
   @When("^select account \"([^\"]*)\" on cash/bank book page$")
-  public void select_account_on_cash_bank_book_page(String arg1) throws Throwable {
+  public void select_account_on_cash_bank_book_page(int arg1) throws Throwable {
 	  CashBankBook cbb= new CashBankBook(dr);
 	  cbb.selectAccount(arg1);
   }
@@ -518,13 +555,13 @@ public class MyStepDefs {
   }
 
   @When("^select ledger group \"([^\"]*)\" on ledger report detail page$")
-  public void select_ledger_group_on_ledger_report_detail_page(String arg1) throws Throwable {
+  public void select_ledger_group_on_ledger_report_detail_page(int arg1) throws Throwable {
 	  LedgerReportDetail lr= new LedgerReportDetail(dr);
 	  lr.selectLedgerGroup(arg1);
   }
 
   @When("^select account \"([^\"]*)\" on ledger report detail page$")
-  public void select_account_on_ledger_report_detail_page(String arg1) throws Throwable {
+  public void select_account_on_ledger_report_detail_page(int arg1) throws Throwable {
 	  LedgerReportDetail lr= new LedgerReportDetail(dr);
 	  lr.selectAccount(arg1);
   }
@@ -567,13 +604,13 @@ public class MyStepDefs {
   }
 
   @When("^select ledger group \"([^\"]*)\" on trial balance new page$")
-  public void select_ledger_group_on_trial_balance_new_page(String arg1) throws Throwable {
+  public void select_ledger_group_on_trial_balance_new_page(int arg1) throws Throwable {
 	  TrialBalanceNew tb= new TrialBalanceNew(dr);
 	  tb.selectLedgerGroup(arg1);
   }
 
   @When("^select account \"([^\"]*)\" on trial balance new page$")
-  public void select_account_on_trial_balance_new_page(String arg1) throws Throwable {
+  public void select_account_on_trial_balance_new_page(int arg1) throws Throwable {
 	  TrialBalanceNew tb= new TrialBalanceNew(dr);
 	  tb.selectAccount(arg1);
   }
@@ -616,13 +653,13 @@ public class MyStepDefs {
   }
 
   @When("^select ledger group \"([^\"]*)\" on trial balance page$")
-  public void select_ledger_group_on_trial_balance_page(String arg1) throws Throwable {
+  public void select_ledger_group_on_trial_balance_page(int arg1) throws Throwable {
 	  TrialBalance tbal= new TrialBalance(dr);
 	  tbal.selectLedgerGroup(arg1);
   }
 
   @When("^select account \"([^\"]*)\" on trial balance page$")
-  public void select_account_on_trial_balance_page(String arg1) throws Throwable {
+  public void select_account_on_trial_balance_page(int arg1) throws Throwable {
 	  TrialBalance tbal= new TrialBalance(dr);
 	  tbal.selectAccount(arg1);
   }
@@ -669,6 +706,37 @@ public class MyStepDefs {
   public void verify_account_petty_cash_setting_page() throws Throwable {
 	  AccountPettyCashSetting apcs= new AccountPettyCashSetting(dr);
 	  apcs.verifyPage(schoolname, scenario);
+  }
+
+//fees outstanding report
+   @When("^user opens fees outstanding report page$")
+   public void user_opens_fees_outstanding_report_page() throws Throwable {
+		new FeesOutstandingReport(dr).openFeesOutstandingReport();
+   }
+
+  @When("^select from date as month \"([^\"]*)\" year \"([^\"]*)\" and day \"([^\"]*)\" on fees outstanding report page$")
+  public void select_from_date_as_month_year_and_day_on_fees_outstanding_report_page(String arg1, String arg2, String arg3) throws Throwable {
+		new FeesOutstandingReport(dr).selectFromDate(arg1, arg2, arg3);
+  }
+
+  @When("^select to date as month \"([^\"]*)\" year \"([^\"]*)\" and day \"([^\"]*)\" on fees outstanding report page$")
+  public void select_to_date_as_month_year_and_day_on_fees_outstanding_report_page(String arg1, String arg2, String arg3) throws Throwable {
+		new FeesOutstandingReport(dr).selectToDate(arg1, arg2, arg3);
+  }
+
+  @When("^select account \"([^\"]*)\" on fees outstanding report page$")
+  public void select_account_on_fees_outstanding_report_page(int arg1) throws Throwable {
+		new FeesOutstandingReport(dr).selectAccount(arg1);
+  }
+
+  @When("^click student wise collection on fees outstanding report page$")
+  public void click_student_wise_collection_on_fees_outstanding_report_page() throws Throwable {
+		new FeesOutstandingReport(dr).clickStudentWise();
+  }
+
+  @Then("^click show to open fees outstanding report$")
+  public void click_show_to_open_fees_outstanding_report() throws Throwable {
+		new FeesOutstandingReport(dr).clickShow(schoolname, scenario);
   }
 
 //voucher print settings
@@ -1144,4 +1212,26 @@ public class MyStepDefs {
 	  DefineGroupNature dgn= new DefineGroupNature(dr);
 	  dgn.verifyPage(schoolname, scenario);
   }
+
+//print format setting
+   @When("^user open print format setting page$")
+   public void user_open_print_format_setting_page() throws Throwable {
+		new PrintFormatSetting(dr).openPrintFormatSetting();
+   }
+
+	@Then("^verify print format setting page$")
+	public void verify_print_format_setting_page() throws Throwable {
+		new PrintFormatSetting(dr).verifyPage(schoolname, scenario);
+	}
+
+//payment voucher
+    @When("^user open payment voucher page$")
+    public void user_open_payment_voucher_page() throws Throwable {
+		new PaymentVoucher(dr).openPaymentVoucher();
+    }
+
+	@Then("^verify payment voucher page$")
+	public void verify_payment_voucher_page() throws Throwable {
+		new PaymentVoucher(dr).verifyPage(schoolname, scenario);
+	}
 }

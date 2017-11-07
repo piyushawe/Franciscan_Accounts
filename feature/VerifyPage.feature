@@ -3,9 +3,9 @@ Feature: Franciscan Account
       The page is loaded successfully
 
   Background: 
-    Given user enter "http://qaerp.franciscanecare.net"
-    When user enter username "admin" and password "Admin#franciscan"
-    And passes school name "qaerp1"
+    Given user enter "http://demoerp.franciscansolutions.info/"
+    When user enter username "admin" and password "admin@123"
+    And passes school name "demoerp"
     And click signin
     Then account home page is opened
 
@@ -128,3 +128,15 @@ Feature: Franciscan Account
   Scenario: To verify define group nature page
     When user open define group nature page
     Then verify define group nature page
+
+  #print format setting
+  @scenario21
+  Scenario: To verify print format setting page
+    When user open print format setting page
+    Then verify print format setting page
+
+  #print format setting
+  @scenario22
+  Scenario: To verify payment voucher page
+    When user open payment voucher page
+    Then verify payment voucher page
